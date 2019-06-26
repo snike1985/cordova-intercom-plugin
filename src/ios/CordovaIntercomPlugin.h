@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface CDVDevice : CDVPlugin
+@interface CordovaIntercomPlugin : CDVPlugin
 {}
 
 - (void)echo:(CDVInvokedUrlCommand*)command;
