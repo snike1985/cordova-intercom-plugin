@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="cordova-intercom-plugin"
+    id="my-plugin"
     version="1.0.0">
     <name>Intercom</name>
     <description>Intercom Cordova Plugin</description>
@@ -14,24 +14,24 @@
     <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="CordovaIntercomPlugin" >
+            <feature name="MyCordovaPlugin" >
                 <param name="android-package" value="org.apache.cordova.intercom.Plugin"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/CordovaIntercomPlugin.java" target-dir="src/org/apache/cordova/intercom" />
+        <source-file src="src/android/MyCordovaPlugin.java" target-dir="src/org/apache/cordova/plugin" />
     </platform>
 
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="CordovaIntercomPlugin">
-                <param name="ios-package" value="CordovaIntercomPlugin"/>
+            <feature name="MyCordovaPlugin">
+                <param name="ios-package" value="MyCordovaPlugin"/>
             </feature>
         </config-file>
 
-        <header-file src="src/ios/CordovaIntercomPlugin.h" />
-        <source-file src="src/ios/CordovaIntercomPlugin.m" />
+        <header-file src="src/ios/MyCordovaPlugin.h" />
+        <source-file src="src/ios/MyCordovaPlugin.m" />
     </platform>
 
 </plugin>
