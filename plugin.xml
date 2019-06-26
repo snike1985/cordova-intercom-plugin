@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova-intercom-plugin"
+    version="1.0.0">
+    <name>Intercom Cordova Plugin</name>
+    <description>Intercom Cordova Plugin</description>
+    <license>MIT</license>
+    <keywords>cordova,plugin,intercom</keywords>
+<!--    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-device.git</repo>-->
+<!--    <issue>https://issues.apache.org/jira/browse/CB/component/12320648</issue>-->
+
+    <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+        <clobbers target="CordovaIntercomPlugin" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="CordovaIntercomPlugin" >
+                <param name="android-package" value="org.apache.cordova.intercom.Plugin"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/CordovaIntercomPlugin.java" target-dir="src/org/apache/cordova/intercom" />
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CordovaIntercomPlugin">
+                <param name="ios-package" value="CordovaIntercomPlugin"/>
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/CordovaIntercomPlugin.h" />
+        <source-file src="src/ios/CordovaIntercomPlugin.m" />
+    </platform>
+
+</plugin>
