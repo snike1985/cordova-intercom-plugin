@@ -12,8 +12,8 @@
     <repo>https://github.com/snike1985/cordova-intercom-plugin</repo>
 
     <js-module src="www/intercom.js" name="intercom">
-        <!-- Here module.exports gets inserted into the window object as window.sfera.intercom -->
-        <clobbers target="sfera.intercom" />
+        <!-- Here module.exports gets inserted into the window object as window.SferaIntercom -->
+        <clobbers target="SferaIntercom" />
     </js-module>
 
     <!-- android -->
