@@ -1,37 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-    id="my-plugin"
-    version="1.0.0">
-    <name>Intercom</name>
-    <description>Intercom Cordova Plugin</description>
-    <license>Apache 2.0</license>
-    <keywords>cordova,plugin,intercom</keywords>
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.example.hello"
+        version="0.7.0">
 
-    <js-module src="www/plugin.js" name="plugin">
-        <clobbers target="plugin" />
-    </js-module>
+  <name>Hello</name>
 
-    <!-- android -->
-    <platform name="android">
-        <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="MyCordovaPlugin" >
-                <param name="android-package" value="org.apache.cordova.intercom.Plugin"/>
-            </feature>
-        </config-file>
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
 
-        <source-file src="src/android/MyCordovaPlugin.java" target-dir="src/org/apache/cordova/plugin" />
-    </platform>
+  <asset src="www/hello.js" target="js/hello.js"/>
 
-    <!-- ios -->
-    <platform name="ios">
-        <config-file target="config.xml" parent="/*">
-            <feature name="MyCordovaPlugin">
-                <param name="ios-package" value="MyCordovaPlugin"/>
-            </feature>
-        </config-file>
+  <js-module src="www/hello.js" name="hello">
+    <clobbers target="hello" />
+  </js-module>
 
-        <header-file src="src/ios/MyCordovaPlugin.h" />
-        <source-file src="src/ios/MyCordovaPlugin.m" />
-    </platform>
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Hello">
+        <param name="android-package" value="com.example.plugin.Hello"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
+  </platform>
+
+  <platform name="ios">
+    
+    <config-file target="config.xml" parent="/widget">
+      <feature name="Hello">
+        <param name="ios-package" value="HWPHello" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
+    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
+  </platform>
+
+  <platform name="wp7">
+    <source-file src="src/wp7/Hello.cs"/>
+  </platform>
 
 </plugin>
