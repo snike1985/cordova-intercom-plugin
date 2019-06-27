@@ -1,11 +1,9 @@
-#import <UIKit/UIKit.h>
 #import <Cordova/CDVPlugin.h>
 
-@interface CDVIntercom : CDVPlugin
-{}
+@interface Intercom : CDVPlugin {
+}
 
-+ (NSString*)cordovaVersion;
-
-- (void)getDeviceInfo:(CDVInvokedUrlCommand*)command;
+// The handler for the 'echo' action
+- (void)echo:(CDVInvokedUrlCommand *)command;
 
 @end
