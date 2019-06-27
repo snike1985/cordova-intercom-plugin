@@ -1,6 +1,6 @@
 #import <Cordova/CDVPlugin.h>
 
-@interface SferaIntercom : CDVPlugin {
+@interface CDVIntercom : CDVPlugin {
 }
 
 // The handler for the 'echo' action
