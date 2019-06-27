@@ -1,45 +1,55 @@
-<?xml version="1.0" encoding="utf-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="com.example.hello"
-        version="0.7.0">
+<?xml version="1.0" encoding="UTF-8"?>
 
-  <name>Hello</name>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:rim="http://www.blackberry.com/ns/widgets"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="sfera-intercom-plugin"
+    version="1.0.0">
+    <name>SferaIntercom</name>
+    <description>Sfera Intercom Plugin</description>
+    <author>Alty</author>
+    <license>Apache 2.0 License</license>
+    <repo>https://github.com/snike1985/cordova-intercom-plugin</repo>
 
-  <engines>
-    <engine name="cordova" version=">=3.4.0"/>
-  </engines>
+    <js-module src="www/intercom.js" name="intercom">
+        <!-- Here module.exports gets inserted into the window object as window.sfera.intercom -->
+        <clobbers target="sfera.intercom" />
+    </js-module>
 
-  <asset src="www/hello.js" target="js/hello.js"/>
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Intercom" >
+                <param name="android-package" value="org.apache.cordova.intercom"/>
+            </feature>
+        </config-file>
 
-  <js-module src="www/hello.js" name="hello">
-    <clobbers target="hello" />
-  </js-module>
+        <source-file src="src/android/Intercom.java" target-dir="src/org/apache/cordova/intercom" />
+    </platform>
 
-  <platform name="android">
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Intercom">
+                <param name="ios-package" value="CDVIntercom"/>
+            </feature>
+        </config-file>
 
-    <config-file target="res/xml/config.xml" parent="/*">
-      <feature name="Hello">
-        <param name="android-package" value="com.example.plugin.Hello"/>
-      </feature>
-    </config-file>
+        <header-file src="src/ios/CDVIntercom.h" />
+        <source-file src="src/ios/CDVIntercom.m" />
+    </platform>
 
-    <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/"/>
-  </platform>
+    <!-- browser -->
+    <platform name="browser">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Intercom">
+                <param name="browser-package" value="Intercom" />
+            </feature>
+        </config-file>
 
-  <platform name="ios">
-    
-    <config-file target="config.xml" parent="/widget">
-      <feature name="Hello">
-        <param name="ios-package" value="HWPHello" />
-      </feature>
-    </config-file>
-
-    <header-file src="src/ios/HWPHello.h" target-dir="HelloPlugin"/>
-    <source-file src="src/ios/HWPHello.m" target-dir="HelloPlugin"/>
-  </platform>
-
-  <platform name="wp7">
-    <source-file src="src/wp7/Hello.cs"/>
-  </platform>
+        <js-module src="src/browser/Intercom.js" name="Intercom">
+            <runs />
+        </js-module>
+    </platform>
 
 </plugin>
