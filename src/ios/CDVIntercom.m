@@ -1,8 +1,9 @@
+#import <Cordova/CDV.h>
 #import "CDVIntercom.h"
 
 #import <Cordova/CDVAvailability.h>
 
-@implementation Intercom
+@implementation CDVIntercom
 
 - (void)pluginInitialize {
 }
