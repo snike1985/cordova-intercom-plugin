@@ -20,7 +20,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Intercom" >
-                <param name="android-package" value="org.apache.cordova.Intercom"/>
+                <param name="android-package" value="org.apache.cordova.intercom"/>
             </feature>
         </config-file>
 
