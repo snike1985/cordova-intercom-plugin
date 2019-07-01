@@ -20,11 +20,11 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Intercom" >
-                <param name="android-package" value="com.example.Intercom"/>
+                <param name="android-package" value="org.apache.cordova.intercom"/>
             </feature>
         </config-file>
 
-        <source-file src="src/android/com/example/Intercom.java" target-dir="src/com/example/" />
+        <source-file src="src/android/Intercom.java" target-dir="src/org/apache/cordova/intercom" />
     </platform>
 
     <!-- ios -->
