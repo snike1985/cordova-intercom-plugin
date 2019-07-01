@@ -39,17 +39,4 @@
         <source-file src="src/ios/CDVIntercom.m" />
     </platform>
 
-    <!-- browser -->
-    <platform name="browser">
-        <config-file target="config.xml" parent="/*">
-            <feature name="Intercom">
-                <param name="browser-package" value="Intercom" />
-            </feature>
-        </config-file>
-
-        <js-module src="src/browser/Intercom.js" name="Intercom">
-            <runs />
-        </js-module>
-    </platform>
-
 </plugin>
